@@ -18,9 +18,9 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "https://github.com/akwiatkowski/ar_binary_flag_attributes"
   gem.license = "LGPLv3"
   gem.summary = %Q{Adds binary attributes to model using one DB field}
-  gem.description = %Q{Add binary attributes to AR using one DB field.}
+  gem.description = %Q{Add binary flag attributes to AR model using one DB field.}
   gem.email = "bobikx@poczta.fm"
-  gem.authors = ["arturaz", "Aleksander Kwiatkowski"]
+  gem.authors = ["Artūras Šlajus", "Aleksander Kwiatkowski"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
