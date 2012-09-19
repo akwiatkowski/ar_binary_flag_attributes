@@ -1,0 +1,9 @@
+= ar_binary_flag_attributes
+
+Coming soon.
+
+== Copyright
+
+Copyright (c) 2011, 2012 Artūras Šlajus, Aleksander Kwiatkowski. See LICENSE.txt for
+further details.
+
