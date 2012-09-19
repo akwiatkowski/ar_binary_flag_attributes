@@ -8,27 +8,22 @@ Gem::Specification.new do |s|
   s.version = "0.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["arturaz", "Aleksander Kwiatkowski"]
+  s.authors = ["Art\u{16b}ras \u{160}lajus", "Aleksander Kwiatkowski"]
   s.date = "2012-09-19"
-  s.description = "Add binary attributes to AR using one DB field."
+  s.description = "Add binary flag attributes to AR model using one DB field."
   s.email = "bobikx@poczta.fm"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
-    ".document",
-    ".rspec",
-    ".rvmrc",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "init.rb",
-    "lib/ar_binary_flag_attributes.rb",
-    "spec/ar_binary_flag_attributes_spec.rb",
-    "spec/spec_helper.rb"
+    "lib/ar_binary_flag_attributes.rb"
   ]
   s.homepage = "https://github.com/akwiatkowski/ar_binary_flag_attributes"
   s.licenses = ["LGPLv3"]
@@ -40,21 +35,24 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<activerecord>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_development_dependency(%q<activemodel>, ["= 3.0.0"])
+      s.add_development_dependency(%q<sqlite3>, [">= 0"])
     else
+      s.add_dependency(%q<activerecord>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_dependency(%q<activemodel>, ["= 3.0.0"])
+      s.add_dependency(%q<sqlite3>, [">= 0"])
     end
   else
+    s.add_dependency(%q<activerecord>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-    s.add_dependency(%q<activemodel>, ["= 3.0.0"])
+    s.add_dependency(%q<sqlite3>, [">= 0"])
   end
 end
 
