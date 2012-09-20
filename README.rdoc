@@ -1,6 +1,73 @@
 = ar_binary_flag_attributes
 
-Coming soon.
+Adds many binary/flag attributes to your AR model using only one integer field.
+
+
+== How to use
+
+Simply as hell :) First, add integer column called 'flags' (default) or whatever you like.
+
+  class AddFlagsToUserMigration < ActiveRecord::Migration
+    def self.run
+      add_column :users, :flags, :integer
+    end
+  end
+
+Then add one line to your model so it should look like this:
+
+  class User < ActiveRecord::Base
+    binary_attributes [:a, :b, :c]
+  end
+
+
+== Custom 'flags' field
+
+You can divide all flags into more integer columns, or use non default column name.
+
+  class AnotherMigration < ActiveRecord::Migration
+    def self.run
+      add_column :phones, :features, :integer
+      add_column :phones, :minor_features, :integer
+    end
+  end
+
+  class Phone < ActiveRecord::Base
+    binary_attributes [:camera, :wlan, :touchscreen], :features
+    binary_attributes [:sd_card_slot, :qwerty_keyboard], :minor_features
+  end
+
+And try:
+
+  p = Phone.new
+  p.camera = true
+  p.qwerty_keyboard = true
+  p.save
+  
+  p.features => 1
+  p.minor_features => 2
+
+
+== Custom masks
+
+You can specify custom masks if you want to:
+
+  class Building < ActiveRecord::Base
+    flag_attributes(
+      "overdriven"                => 0b00000001,
+      "with_points"               => 0b00000010
+    )
+  end
+
+
+== Check also
+
+There is a more powerful tool here https://github.com/pboling/flag_shih_tzu
+
+== Author
+
+Core author - Artūras Šlajus (https://github.com/arturaz/ar_binary_flag_attributes/blob/master/init.rb).
+I just added spec, and made a gem :]
+
 
 == Copyright
 
