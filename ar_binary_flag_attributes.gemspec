@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "ar_binary_flag_attributes"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Art\u{16b}ras \u{160}lajus", "Aleksander Kwiatkowski"]
-  s.date = "2012-09-19"
+  s.date = "2012-09-22"
   s.description = "Add binary flag attributes to AR model using one DB field."
   s.email = "bobikx@poczta.fm"
   s.extra_rdoc_files = [
