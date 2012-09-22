@@ -64,4 +64,24 @@ describe ActiveRecord::Base do
     s.c.should_not
   end
 
+  it "should use binary attributes on SampleModel using default values from checkbox ('0','1')" do
+    s = SampleModel.create
+    s.a = '0'
+    s.b = '0'
+    s.c = '1'
+    s.save!
+
+    s.flags.should == (4)
+  end
+
+  it "should use binary attributes on SampleModel using default values from checkbox ('0','1')" do
+    s = SampleModel.create
+    s.a = 0
+    s.b = 0
+    s.c = 1
+    s.save!
+
+    s.flags.should == (4)
+  end
+
 end

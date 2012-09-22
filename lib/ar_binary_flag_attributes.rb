@@ -54,7 +54,8 @@ class ActiveRecord::Base
 
       # Set bit value.
       define_method(set_method) do |value|
-        if value
+        # rails fix
+        if value and not value.to_s == '0'
           # Set bit in flags. This is done using or operation:
           #
           # 0b010101 |     0b010101 |
